@@ -9,7 +9,7 @@ from lib.badges import badge_path, compute_tier
 from lib.data import fetch_profile, fetch_scoreboard, insert_entry
 from lib.supabase_client import get_supabase
 
-st.set_page_config(page_title="Burpee/Steps Challenge", page_icon="🏋️", layout="centered")
+st.set_page_config(page_title="Burpee/Steps Challenge", page_icon=":octopus:", layout="centered")
 
 require_auth()
 

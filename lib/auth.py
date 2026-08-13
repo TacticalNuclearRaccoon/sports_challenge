@@ -38,7 +38,7 @@ def _handle_signup(email: str, password: str) -> None:
 
 
 def _render_login_signup() -> None:
-    st.title("🏋️ Burpee / Steps Challenge")
+    st.title("🔥 Burpee / Steps Challenge")
     login_tab, signup_tab = st.tabs(["Log in", "Sign up"])
 
     with login_tab:
