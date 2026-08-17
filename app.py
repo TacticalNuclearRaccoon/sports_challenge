@@ -36,6 +36,11 @@ tab_log, tab_scoreboard = st.tabs(["Log entry", "Scoreboard"])
 
 with tab_log:
     st.subheader(f"Log your {label}")
+
+    if st.session_state.pop("just_logged", None):
+        st.success("Logged! Your entry has been recorded.")
+        st.balloons()
+
     default_date = min(max(date.today(), CHALLENGE_START), CHALLENGE_END)
     with st.form("entry_form"):
         entry_date = st.date_input(
@@ -47,7 +52,7 @@ with tab_log:
 
     if submitted:
         insert_entry(sb, user_id, entry_date, int(amount), message)
-        st.success("Logged!")
+        st.session_state.just_logged = True
         st.rerun()
 
 with tab_scoreboard:
