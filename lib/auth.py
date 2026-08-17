@@ -96,7 +96,7 @@ def render_onboarding(user_id: str) -> dict | None:
         st.error("Please enter a display name.")
         return None
 
-    create_profile(sb, user_id, display_name.strip(), challenge_type)
+    st.session_state.profile = create_profile(sb, user_id, display_name.strip(), challenge_type)
     st.rerun()
 
 
